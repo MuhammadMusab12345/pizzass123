@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PizzaFire 🔥 — Premium Artisan Pizza</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader" class="loader">
+  <div class="loader-pizza">
+    <img src="images/IMG-20260517-WA0017_2-removebg-preview.png" alt="Shale Pizzass Logo" class="loader-logo-img">
+  </div>
+  <div class="loader-text">Shale Pizzass</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+
+<!-- NAVBAR -->
+<nav class="navbar">
+ <div class="nav-logo">
+    <img src="images/IMG-20260517-WA0017_2-removebg-preview.png" class="brand-logo-img" alt="PizzaFire Logo">
+    Shale<span class="orange-text">Pizzass</span>
+</div>
+<ul class="nav-links">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About</a></li>
+  
+  <li class="dropdown">
+    <a href="#menu" class="dropdown-toggle">Menu <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+    <ul class="dropdown-menu">
+      <li><a href="#menu">All Pizzas 🍕</a></li>
+      <li><a href="#menu">Burgers 🍔</a></li>
+      <li><a href="#menu">Fries 🍟</a></li>
+      <li><a href="#menu">Drinks 🥤</a></li>
+    </ul>
+  </li>
+  
+  <li><a href="#offers">Offers</a></li>
+  
+  <li><a href="#gallery">Gallery</a></li>
+  
+  
+  <li><a href="#testimonials">Feedback</a></li>
+  
+  <li><a href="#location">Location</a></li>
+</ul>
+  <div class="nav-actions">
+    <div id="userGreeting" class="user-greeting" style="display:none"></div>
+    <a href="login.html" id="loginBtn" class="btn-nav-login">Login</a>
+    <button id="logoutBtn" class="btn-nav-login" style="display:none" onclick="logout()">Logout</button>
+    <button class="btn-order" onclick="openPizzaBuilder()">Order Now 🍕</button>
+    
+  </div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMobileMenu()">Home</a>
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#menu" onclick="closeMobileMenu()">Menu</a>
+  <a href="#offers" onclick="closeMobileMenu()">Offers</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Reviews</a>
+  <a href="#location" onclick="closeMobileMenu()">Location</a>
+  <a href="login.html" id="mobileLoginBtn">Login</a>
+</div>
+
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg-blobs">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">🔥 Freshly Fired Since 2019</div>
+    <h1 class="hero-title">
+      THE PIZZA<br>
+      <span class="hero-title-accent">THAT HITS</span><br>
+      DIFFERENT
+    </h1>
+    <p class="hero-subtitle">Hand-stretched dough, premium toppings, blazing wood-fire oven. Every bite is a flame-kissed masterpiece.</p>
+    <div class="hero-cta-group">
+      <button class="btn-cta-main" onclick="openPizzaBuilder()">Build Your Pizza 🍕</button>
+      <a href="#menu" class="btn-cta-ghost">Explore Menu →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">50K+</div><div class="stat-lab">Happy Customers</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><div class="stat-num">4.9★</div><div class="stat-lab">Avg Rating</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><div class="stat-num">30min</div><div class="stat-lab">Delivery</div></div>
+    </div>
+  </div>
+
+
+  <div class="floating-pizza-container">
+  <img src="images/4.jpeg" class="side-floating-pizza" alt="Floating Pizza">
+</div>
+
+
+ 
+  <div>
+    
+  </div>id="home" class="hero-section" style="position: relative; overflow: hidden;">
+  
+  <video autoplay loop muted playsinline class="bg-video">
+    <source src="images/2026-05-23_20-08-16_0.mp4" type="video/mp4">
+  </video>
+  
+  <div class="video-overlay"></div>
+
+  <div class="hero-content">
+    </div>
+
+
+
+  <!-- <div class="hero-pizza-float">
+    <div class="floating-pizza-wrap">
+      <div class="hero-pizza-glow"></div>
+      <div class="hero-pizza-emoji">🍕</div>
+      <div class="floating-topping t1">🧀</div>
+      <div class="floating-topping t2">🌶️</div>
+      <div class="floating-topping t3">🍄</div>
+      <div class="floating-topping t4">🫒</div>
+    </div> -->
+
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-dot"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about-section" id="about">
+  <div class="section-container">
+    <div class="about-grid">
+      <div class="about-visual-compact">
+        <div class="about-img-frame-small">
+          <img src="ChatGPT Image May 24, 2026, 11_46_49 AM.png" class="about-image-small" alt="About PizzaFire">
+          <div class="about-badge-small">Est. 2019</div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="section-eyebrow">Our Story</div>
+        <h2 class="section-title">Born From Fire,<br><span class="accent-text">Made With Love</span></h2>
+        <p class="about-desc">PizzaFire started in a tiny kitchen in 2019 with one obsession: making the perfect pizza. Founder Musab Khan spent years perfecting his hand-stretched dough recipe, importing San Marzano tomatoes, and sourcing the finest mozzarella.</p>
+        <p class="about-desc">Today, we serve hundreds of pies a day — but every single one still feels personal. Because when you eat here, you're not just having pizza. You're having <em>our</em> pizza.</p>
+        <div class="about-features">
+          <div class="about-feat"><span>🌿</span> Fresh Ingredients Daily</div>
+          <div class="about-feat"><span>🔥</span> Wood-Fire Oven at 800°F</div>
+          <div class="about-feat"><span>👨‍🍳</span> Master Pizzaiolos</div>
+          <div class="about-feat"><span>🚴</span> 30-Minute Delivery</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="carousel-section-area" id="area">
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      
+      <div class="card" style="--i:0;">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=400');"></div>
+            <div class="card-title">Our Story 📜</div>
+          </div>
+          <div class="card-back">
+            <h3>How We Started</h3>
+            <p>PizzaFire began with a simple dream: to bring authentic, wood-fired artisan pizza to Karachi with a modern, fiery twist!</p>
+            <button class="btn-card">Read More</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="--i:1;">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=400');"></div>
+            <div class="card-title">Our Chefs 👨‍🍳</div>
+          </div>
+          <div class="card-back">
+            <h3>Master Pizzaiolos</h3>
+            <p>Our dough is fermented for 48 hours and hand-stretched by experts who live and breathe premium pizza craft.</p>
+            <button class="btn-card">Meet Team</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="--i:2;">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&q=80&w=400');"></div>
+            <div class="card-title">Ingredients 🍅</div>
+          </div>
+          <div class="card-back">
+            <h3>Pure & Fresh</h3>
+            <p>We source imported San Marzano tomatoes, fresh mozzarella, and locally grown organic basil for that perfect bite.</p>
+            <button class="btn-card">View Quality</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="--i:3;">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=400');"></div>
+            <div class="card-title">The Fire 🔥</div>
+          </div>
+          <div class="card-back">
+            <h3>800° Wood Oven</h3>
+            <p>Baked in under 90 seconds in our custom stone ovens, creating that beautiful leopard-spotted charred crust.</p>
+            <button class="btn-card">See Oven</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="--i:4;">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&q=80&w=400');"></div>
+            <div class="card-title">Our Goal 🎯</div>
+          </div>
+          <div class="card-back">
+            <h3>100% Satisfaction</h3>
+            <p>To deliver an unforgettable culinary experience every single time. Hot, fresh, and bursting with flavors.</p>
+            <button class="btn-card">Our Vision</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- ===== MENU ===== -->
+<section class="menu-section" id="menu">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-eyebrow">Our Menu</div>
+      <h2 class="section-title">Something For<br><span class="accent-text">Every Craving</span></h2>
+    </div>
+    <div class="menu-tabs">
+      <button class="menu-tab active" onclick="filterMenu('pizza', this)">🍕 Pizza</button>
+      <button class="menu-tab" onclick="filterMenu('burger', this)">🍔 Burgers</button>
+      <button class="menu-tab" onclick="filterMenu('fries', this)">🍟 Fries</button>
+      <button class="menu-tab" onclick="filterMenu('drink', this)">🥤 Drinks</button>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <!-- Pizza Items -->
+      <div class="menu-card" data-cat="pizza">
+        <div class="menu-card-img pizza-card-img"><div class="menu-emoji">🍕</div></div>
+        <div class="menu-card-body">
+          <div class="menu-card-badge">Bestseller</div>
+          <h3>Margherita Classic</h3>
+          <p>San Marzano tomato, buffalo mozzarella, fresh basil</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">$12.99</span>
+            <button class="btn-add-menu" onclick="openPizzaBuilder()">Order +</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card" data-cat="pizza">
+        <div class="menu-card-img"><div class="menu-emoji">🍕</div></div>
+        <div class="menu-card-body">
+          <div class="menu-card-badge spicy-badge">🌶 Spicy</div>
+          <h3>Diablo Inferno</h3>
+          <p>Spicy salami, jalapeños, ghost pepper sauce, smoked gouda</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">$15.99</span>
+            <button class="btn-add-menu" onclick="openPizzaBuilder()">Order +</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card" data-cat="pizza">
+        <div class="menu-card-img"><div class="menu-emoji">🍕</div></div>
+        <div class="menu-card-body">
+          <h3>BBQ Chicken Royale</h3>
+          <p>Grilled chicken, smoky BBQ sauce, red onions, cilantro</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">$14.99</span>
+            <button class="btn-add-menu" onclick="openPizzaBuilder()">Order +</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card" data-cat="pizza">
+        <div class="menu-card-img"><div class="menu-emoji">🍕</div></div>
+        <div class="menu-card-body">
+          <div class="menu-card-badge veg-badge">🌱 Veg</div>
+          <h3>Garden Supreme</h3>
+          <p>Bell peppers, mushrooms, olives, artichokes, sun-dried tomatoes</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">$13.49</span>
+            <button class="btn-add-menu" onclick="openPizzaBuilder()">Order +</button>
+          </div>
+        </div>
+      </div>
+      <!-- Burgers -->
+      <div class="menu-card" data-cat="burger" style="display:none">
+        <div class="menu-card-img burger-img"><div class="menu-emoji">🍔</div></div>
+        <div class="menu-card-body">
+          <div class="menu-card-badge">Fan Fave</div>
+          <h3>Fire Smash Burger</h3>
+          <p>Double smash patty, american cheese, secret sauce, brioche bun</p>
+          <div class="menu-card-footer"><span class="menu-price">$10.99</span><button class="btn-add-menu">Order +</button></div>
+        </div>
+      </div>
+      <div class="menu-card" data-cat="burger" style="display:none">
+        <div class="menu-card-img burger-img"><div class="menu-emoji">🍔</div></div>
+        <div class="menu-card-body">
+          <h3>Crispy Chicken Deluxe</h3>
+          <p>Buttermilk fried chicken, coleslaw, pickles, honey mustard</p>
+          <div class="menu-card-footer"><span class="menu-price">$11.49</span><button class="btn-add-menu">Order +</button></div>
+        </div>
+      </div>
+      <!-- Fries -->
+      <div class="menu-card" data-cat="fries" style="display:none">
+        <div class="menu-card-img fries-img"><div class="menu-emoji">🍟</div></div>
+        <div class="menu-card-body">
+          <div class="menu-card-badge">Loaded</div>
+          <h3>Cheese Lava Fries</h3>
+          <p>Thick-cut fries smothered in molten nacho cheese & jalapeños</p>
+          <div class="menu-card-footer"><span class="menu-price">$6.99</span><button class="btn-add-menu">Order +</button></div>
+        </div>
+      </div>
+      <div class="menu-card" data-cat="fries" style="display:none">
+        <div class="menu-card-img fries-img"><div class="menu-emoji">🍟</div></div>
+        <div class="menu-card-body">
+          <h3>Truffle Parmesan Fries</h3>
+          <p>Crispy fries tossed in truffle oil, shaved parmesan, herbs</p>
+          <div class="menu-card-footer"><span class="menu-price">$7.49</span><button class="btn-add-menu">Order +</button></div>
+        </div>
+      </div>
+      <!-- Drinks -->
+      <div class="menu-card" data-cat="drink" style="display:none">
+        <div class="menu-card-img drink-img"><div class="menu-emoji">🥤</div></div>
+        <div class="menu-card-body">
+          <h3>Fire Lemonade</h3>
+          <p>Fresh-squeezed lemon with a hint of chili & mint — signature drink</p>
+          <div class="menu-card-footer"><span class="menu-price">$3.99</span><button class="btn-add-menu">Order +</button></div>
+        </div>
+      </div>
+      <div class="menu-card" data-cat="drink" style="display:none">
+        <div class="menu-card-img drink-img"><div class="menu-emoji">🧋</div></div>
+        <div class="menu-card-body">
+          <h3>Mango Blaze Shake</h3>
+          <p>Thick mango milkshake with caramel drizzle and whipped cream</p>
+          <div class="menu-card-footer"><span class="menu-price">$4.99</span><button class="btn-add-menu">Order +</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Gallery section  -->
+<section class="gallery-section" id="gallery">
+  <div class="section-container">
+    <h2 class="section-title">Our Premium <span class="gradient-text">Gallery</span></h2>
+    <p class="section-subtitle">Swipe or click next to explore our fire-crafted menu in 3D stack.</p>
+    
+    <div class="stack-area">
+      <div class="stack-container" id="cardStack">
+        
+        <div class="stack-card">
+          <img src="images/download (1).jpg" alt="Pepperoni Delight">
+          <div class="card-info">
+            <h3>Pepperoni Delight 🍕</h3>
+            <p>Loaded with premium mozzarella and crispy pepperoni slices.</p>
+          </div>
+        </div>
+        
+        <div class="stack-card">
+          <img src="images/download (2).jpg" alt="Cheesy Lava">
+          <div class="card-info">
+            <h3>Cheesy Lava 🧀</h3>
+            <p>A burst of rich molten cheese oozing from every hot slice.</p>
+          </div>
+        </div>
+        
+        <div class="stack-card">
+          <img src="images/download.jpg" alt="Woodfired Oven">
+          <div class="card-info">
+            <h3>Woodfired Veggie 🔥</h3>
+            <p>Smoky roasted bell peppers, olives, onions, and fresh basil.</p>
+          </div>
+        </div>
+        
+        <div class="stack-card">
+          <img src="images/IMG-20260517-WA0017_2-removebg-preview.png" alt="BBQ Chicken">
+          <div class="card-info">
+            <h3>BBQ Chicken Twist 🍗</h3>
+            <p>Tender chicken cubes tossed in smoky hickory BBQ sauce.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="stack-controls">
+      <button class="btn-stack" id="stackNextBtn">Next Slice 🍕</button>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- ===== OFFERS ===== -->
+<section class="offers-section" id="offers">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-eyebrow">Hot Deals</div>
+      <h2 class="section-title">Burn Your Budget,<br><span class="accent-text">Not Your Wallet</span></h2>
+    </div>
+    <div class="offers-grid">
+      <div class="offer-card offer-gold">
+        <div class="offer-badge">LIMITED</div>
+        <div class="offer-emoji">🍕🍕</div>
+        <h3>Buy 1 Get 1 Free</h3>
+        <p>Every Tuesday — order any large pizza and get a second one absolutely free!</p>
+        <div class="offer-code">Code: <strong>TWIN2X</strong></div>
+        <button class="btn-offer" onclick="openPizzaBuilder()">Grab Deal →</button>
+      </div>
+      <div class="offer-card offer-red">
+        <div class="offer-badge hot">🔥 HOT</div>
+        <div class="offer-emoji">🍕🍔🍟🥤</div>
+        <h3>Mega Combo Deal</h3>
+        <p>1 Large Pizza + 2 Burgers + Fries + 2 Drinks for just $34.99!</p>
+        <div class="offer-code">Code: <strong>MEGAFIRE</strong></div>
+        <button class="btn-offer" onclick="openPizzaBuilder()">Grab Deal →</button>
+      </div>
+      <div class="offer-card offer-dark">
+        <div class="offer-badge new-badge">NEW</div>
+        <div class="offer-emoji">🎉</div>
+        <h3>First Order 20% Off</h3>
+        <p>New customer? Welcome to the family. Get 20% off your very first order!</p>
+        <div class="offer-code">Code: <strong>WELCOME20</strong></div>
+        <button class="btn-offer" onclick="openPizzaBuilder()">Grab Deal →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials-section" id="testimonials">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-eyebrow">What People Say</div>
+      <h2 class="section-title">Our Customers<br><span class="accent-text">Are Obsessed</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I've tried every pizza place in the city. PizzaFire is on another level. The crust alone is worth it — crispy outside, chewy inside. Absolute perfection."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div><div class="testi-name">Ahmed Khan</div><div class="testi-loc">📍 Karachi</div></div>
+        </div>
+      </div>
+      <div class="testi-card testi-featured">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The pizza builder is SO fun! My kids love picking their own toppings online. And delivery was in 25 minutes — insane! Will definitely order again."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SF</div>
+          <div><div class="testi-name">Sara Farooq</div><div class="testi-loc">📍 Lahore</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The Diablo Inferno pizza is FIRE (literally). I'm obsessed. The spice level is real, the flavor is incredible. Nothing else compares."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">BM</div>
+          <div><div class="testi-name">Bilal Mirza</div><div class="testi-loc">📍 Islamabad</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== LOCATION ===== -->
+<section class="location-section" id="location">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-eyebrow">Find Us</div>
+      <h2 class="section-title">Find Us Here 📍</h2>
+      <p class="location-subtitle">Come visit us — or let us come to you.</p>
+    </div>
+    <div class="location-grid">
+      <div class="location-info">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <div class="info-label">Address</div>
+            <div class="info-value">Plot 47, Zamzama Boulevard<br>Phase V, DHA, Karachi 75500</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">⏰</div>
+          <div>
+            <div class="info-label">Hours</div>
+            <div class="info-value">Mon–Thu: 11am – 11pm<br>Fri–Sun: 11am – 1am</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <div class="info-label">Phone</div>
+            <div class="info-value">+92 300 1234567</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <div>
+            <div class="info-label">Email</div>
+            <div class="info-value">hello@pizzafire.pk</div>
+          </div>
+        </div>
+        <a href="https://maps.google.com" target="_blank" class="btn-directions">
+          <i class="fas fa-map-marker-alt"></i> Get Directions
+        </a>
+      </div>
+      <div class="map-wrapper">
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.0295984764!2d67.0699!3d24.8186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d7b5c29e5c3%3A0x78fc47e3a1c71c3b!2sDHA%20Phase%205%2C%20Karachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1716000000000!5m2!1sen!2s"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-brand">
+   <div class="footer-logo-title">
+    <img src="images/IMG-20260517-WA0017_2-removebg-preview.png" class="brand-logo-img" alt="PizzaFire Logo">
+    <h2>Shale<span class="orange-text">Pizzass</span></h2>
+    </div>
+      <p>Delivering authentic flavors since 1960. With over 1000 locations worldwide. Crafted with fire & love.</p>
+      
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <a href="#menu">Pizza</a>
+        <a href="#menu">Burgers</a>
+        <a href="#menu">Fries</a>
+        <a href="#menu">Drinks</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#offers">Offers</a>
+        <a href="#location">Locations</a>
+        <a href="#">Careers</a>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="footer-bottom">
+    <span>© 2026 PizzaFire. Made with 🔥 in Karachi.</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a class="whatsapp-float" href="https://wa.me/923001234567?text=Hello%20PizzaFire!%20I%20want%20to%20place%20an%20order%20🍕" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+  <span class="wa-tooltip">Order on WhatsApp!</span>
+</a>
+
+<!-- CART NOTIFICATION -->
+<div class="cart-notification" id="cartNotif">
+  <div class="cart-notif-inner">
+    <span>🛒</span><span id="cartCount">0</span> item(s) in cart
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+index.html
+Displaying index.html.

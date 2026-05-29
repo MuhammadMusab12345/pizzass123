@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — PizzaFire 🔥</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="auth-body signup-body">
+
+<div class="auth-bg">
+  <div class="auth-blob ab1"></div>
+  <div class="auth-blob ab2"></div>
+  <div class="auth-blob ab3"></div>
+  <div class="auth-blob ab4"></div>
+</div>
+
+<div class="auth-floaters">
+  <span class="af af1">🍕</span><span class="af af2">🔥</span>
+  <span class="af af3">🧀</span><span class="af af4">🍕</span>
+  <span class="af af5">⭐</span><span class="af af6">🌶️</span>
+</div>
+
+<div class="auth-container">
+  <div class="auth-card glass-card">
+
+    <a href="index.html" class="auth-logo">
+      <span class="logo-fire-big">🔥</span>
+      <span class="auth-logo-text">PizzaFire</span>
+    </a>
+
+    <h2 class="auth-title">Join PizzaFire!</h2>
+    <p class="auth-subtitle">Create your account and get 20% off your first order 🎉</p>
+
+    <div class="auth-error" id="signupError" style="display:none">
+      <i class="fas fa-exclamation-circle"></i>
+      <span id="signupErrorMsg">Something went wrong.</span>
+    </div>
+
+    <div class="auth-form">
+
+      <div class="input-group">
+        <input type="text" id="signupName" class="auth-input" placeholder=" " oninput="clearSignupError()">
+        <label class="floating-label">Full Name</label>
+        <span class="input-icon"><i class="fas fa-user"></i></span>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="signupEmail" class="auth-input" placeholder=" " oninput="clearSignupError()">
+        <label class="floating-label">Email Address</label>
+        <span class="input-icon"><i class="fas fa-envelope"></i></span>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="signupPassword" class="auth-input" placeholder=" " oninput="updateStrength()">
+        <label class="floating-label">Password</label>
+        <span class="input-icon"><i class="fas fa-lock"></i></span>
+        <button class="toggle-pass" type="button" onclick="togglePass('signupPassword', this)">
+          <i class="fas fa-eye"></i>
+        </button>
+      </div>
+
+      <!-- Password Strength -->
+      <div class="strength-bar-wrap">
+        <div class="strength-bar" id="strengthBar">
+          <div class="strength-fill" id="strengthFill"></div>
+        </div>
+        <span class="strength-label" id="strengthLabel">Enter password</span>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="signupConfirm" class="auth-input" placeholder=" " oninput="clearSignupError()">
+        <label class="floating-label">Confirm Password</label>
+        <span class="input-icon"><i class="fas fa-shield-alt"></i></span>
+        <button class="toggle-pass" type="button" onclick="togglePass('signupConfirm', this)">
+          <i class="fas fa-eye"></i>
+        </button>
+      </div>
+
+      <label class="terms-check">
+        <input type="checkbox" id="termsCheck">
+        I agree to the <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>
+      </label>
+
+      <button class="btn-auth" onclick="handleSignup()">
+        <span class="btn-auth-text">Create Account 🚀</span>
+        <div class="btn-ripple"></div>
+      </button>
+    </div>
+
+    <p class="auth-switch">Already have an account? <a href="login.html">Sign In →</a></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+function handleSignup() {
+  const name = document.getElementById('signupName').value.trim();
+  const email = document.getElementById('signupEmail').value.trim();
+  const pass = document.getElementById('signupPassword').value;
+  const confirm = document.getElementById('signupConfirm').value;
+  const terms = document.getElementById('termsCheck').checked;
+  const errDiv = document.getElementById('signupError');
+  const errMsg = document.getElementById('signupErrorMsg');
+
+  if (!name || !email || !pass || !confirm) {
+    errMsg.textContent = 'Please fill in all fields.';
+    errDiv.style.display = 'flex'; return;
+  }
+  if (!email.includes('@')) {
+    errMsg.textContent = 'Please enter a valid email address.';
+    errDiv.style.display = 'flex'; return;
+  }
+  if (pass.length < 6) {
+    errMsg.textContent = 'Password must be at least 6 characters.';
+    errDiv.style.display = 'flex'; return;
+  }
+  if (pass !== confirm) {
+    errMsg.textContent = 'Passwords do not match.';
+    errDiv.style.display = 'flex'; return;
+  }
+  if (!terms) {
+    errMsg.textContent = 'Please accept the Terms of Service.';
+    errDiv.style.display = 'flex'; return;
+  }
+
+  const users = JSON.parse(localStorage.getItem('pf_users') || '[]');
+  if (users.find(u => u.email === email)) {
+    errMsg.textContent = 'An account with this email already exists.';
+    errDiv.style.display = 'flex'; return;
+  }
+
+  const newUser = { name, email, password: pass };
+  users.push(newUser);
+  localStorage.setItem('pf_users', JSON.stringify(users));
+  localStorage.setItem('pf_loggedIn', JSON.stringify(newUser));
+
+  const btn = document.querySelector('.btn-auth');
+  btn.innerHTML = '<span class="btn-auth-text">🎉 Account Created! Redirecting...</span>';
+  btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+  setTimeout(() => { window.location.href = 'index.html'; }, 1200);
+}
+
+function updateStrength() {
+  const pass = document.getElementById('signupPassword').value;
+  const fill = document.getElementById('strengthFill');
+  const label = document.getElementById('strengthLabel');
+  let score = 0;
+  if (pass.length >= 6) score++;
+  if (pass.length >= 10) score++;
+  if (/[A-Z]/.test(pass)) score++;
+  if (/[0-9]/.test(pass)) score++;
+  if (/[^A-Za-z0-9]/.test(pass)) score++;
+
+  const levels = [
+    { pct: '0%', color: 'transparent', text: 'Enter password' },
+    { pct: '25%', color: '#ef4444', text: 'Weak 😬' },
+    { pct: '50%', color: '#f97316', text: 'Fair 🤔' },
+    { pct: '75%', color: '#eab308', text: 'Good 👍' },
+    { pct: '100%', color: '#22c55e', text: 'Strong 💪' },
+  ];
+  const l = levels[Math.min(score, 4)];
+  fill.style.width = l.pct;
+  fill.style.background = l.color;
+  label.textContent = l.text;
+}
+
+function clearSignupError() {
+  document.getElementById('signupError').style.display = 'none';
+}
+</script>
+</body>
+</html>
+
+
+
+
